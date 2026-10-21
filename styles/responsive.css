@@ -1,0 +1,177 @@
+/* ==========================================================================
+   Star Comics — Responsive Styles & Media Queries
+   ========================================================================== */
+
+/* Tablet & Smaller Desktops (max-width: 1024px) */
+@media (max-width: 1024px) {
+  :root {
+    --header-height: 68px;
+    --space-4xl: 4.5rem;
+  }
+
+  .best-sellers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-xl);
+  }
+
+  .recommendation-card {
+    flex: 0 0 calc((100% - (var(--space-xl) * 2)) / 3); /* 3 visible */
+    min-width: 200px;
+  }
+
+  .hero-banner {
+    min-height: 460px;
+  }
+}
+
+/* Tablet & Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  :root {
+    --header-height: 64px;
+    --drawer-width: 100%;
+    --space-xl: 1.5rem;
+    --space-2xl: 2rem;
+    --space-3xl: 3rem;
+    --space-4xl: 3.5rem;
+  }
+
+  .container {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  /* Header & Mobile Navigation */
+  .mobile-nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    position: fixed;
+    top: var(--header-height);
+    left: 0;
+    right: 0;
+    background-color: var(--color-white);
+    flex-direction: column;
+    padding: var(--space-xl) var(--space-md);
+    gap: var(--space-md);
+    border-bottom: 1px solid var(--color-border-subtle);
+    box-shadow: var(--shadow-dropdown);
+    transform: translateY(-120%);
+    opacity: 0;
+    visibility: hidden;
+    transition: transform var(--transition-normal), opacity var(--transition-normal), visibility var(--transition-normal);
+  }
+
+  .nav-links.is-open {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-link {
+    width: 100%;
+    text-align: center;
+    padding: var(--space-sm) var(--space-md);
+    font-size: var(--font-size-md);
+  }
+
+  .nav-actions {
+    gap: var(--space-sm);
+  }
+
+  /* Hamburger active transformation */
+  .mobile-nav-toggle.is-active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+
+  .mobile-nav-toggle.is-active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .mobile-nav-toggle.is-active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+
+  /* Hero adjustments */
+  .hero-banner {
+    min-height: 420px;
+    padding: var(--space-2xl) var(--space-md);
+  }
+
+  .hero-heading {
+    font-size: 2.25rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: var(--space-lg);
+  }
+
+  .hero-cta-btn {
+    padding: 0.85rem 1.8rem;
+    font-size: var(--font-size-base);
+  }
+
+  /* Best Sellers Section */
+  .best-sellers-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Carousel */
+  .recommendations-header-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-md);
+  }
+
+  .recommendation-card {
+    flex: 0 0 calc((100% - var(--space-md)) / 2); /* 2 visible */
+    min-width: 160px;
+  }
+
+  .carousel-controls {
+    align-self: flex-end;
+  }
+
+  /* Drawer Mobile full-width */
+  .cart-drawer {
+    max-width: 100%;
+  }
+
+  .cart-drawer-header,
+  .cart-drawer-body,
+  .cart-drawer-footer {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  /* Toast Notification */
+  .toast-container {
+    left: var(--space-md);
+    right: var(--space-md);
+    bottom: var(--space-md);
+  }
+
+  .toast {
+    max-width: 100%;
+  }
+}
+
+/* Very Small Mobile Screens (max-width: 420px) */
+@media (max-width: 420px) {
+  .hero-heading {
+    font-size: 1.85rem;
+  }
+
+  .product-card {
+    padding: var(--space-md);
+  }
+
+  .recommendation-card {
+    flex: 0 0 75%; /* 1.3 visible for carousel preview peek */
+    min-width: 150px;
+  }
+}

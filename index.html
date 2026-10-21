@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Star Comics — Your modern comic book bookstore specializing in graphic novels and trade paperbacks." />
+  <meta name="theme-color" content="#FFFFFF" />
+  <title>Star Comics — Graphic Novels & Trade Paperbacks</title>
+
+  <!-- Google Fonts: Poppins (Regular 400, Italic 400, Medium 500, Bold 700) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" 
+    rel="stylesheet" 
+  />
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="styles/variables.css" />
+  <link rel="stylesheet" href="styles/base.css" />
+  <link rel="stylesheet" href="styles/components.css" />
+  <link rel="stylesheet" href="styles/responsive.css" />
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ==========================================================================
+       3. Header and Sticky Navigation Bar
+       ========================================================================== -->
+  <header class="site-header" role="banner">
+    <div class="container nav-container">
+      <!-- Left side: Brand Name -->
+      <a href="#hero" class="brand-logo" aria-label="Star Comics Home">
+        <span class="brand-star" aria-hidden="true">&#9733;</span>
+        <span>Star Comics</span>
+      </a>
+
+      <!-- Right side: Navigation Items in Exact Order -->
+      <!-- 1. Home | 2. Best Sellers | 3. Recommendations | 4. Shopping cart icon -->
+      <div class="nav-actions">
+        <nav role="navigation" aria-label="Main Navigation">
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#hero" class="nav-link">Home</a></li>
+            <li><a href="#best-sellers" class="nav-link">Best Sellers</a></li>
+            <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+          </ul>
+        </nav>
+
+        <!-- Shopping Cart Trigger Button -->
+        <button 
+          type="button" 
+          class="cart-trigger-btn" 
+          id="cart-trigger-btn" 
+          aria-label="Open shopping cart" 
+          aria-haspopup="dialog"
+        >
+          <svg class="cart-icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+          <span class="cart-badge" id="cart-badge" style="display: none;" aria-live="polite">0</span>
+        </button>
+
+        <!-- Mobile Navigation Toggle -->
+        <button 
+          type="button" 
+          class="mobile-nav-toggle" 
+          id="mobile-nav-toggle" 
+          aria-label="Toggle navigation menu" 
+          aria-expanded="false" 
+          aria-controls="nav-links"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content Area -->
+  <main id="main-content" role="main">
+    <!-- ==========================================================================
+         4. Hero Banner
+         ========================================================================== -->
+    <section class="hero-banner" id="hero" aria-label="Introduction Banner">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-content">
+        <h1 class="hero-heading">Looking for Comics?</h1>
+        <p class="hero-subtitle">You came to the right place.</p>
+        <a href="#recommendations" class="hero-cta-btn" id="hero-start-shopping-btn" role="button">
+          <span>Start Shopping</span>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         5. Best Sellers Section
+         ========================================================================== -->
+    <section class="section best-sellers-section" id="best-sellers" aria-labelledby="best-sellers-heading">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title" id="best-sellers-heading">Best Sellers</h2>
+        </div>
+
+        <!-- 6 Products in a Responsive Grid (3 columns on desktop) -->
+        <div class="best-sellers-grid" id="best-sellers-grid">
+          <!-- Rendered dynamically by bestSellers.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         6. Recommendations Section (Carousel)
+         ========================================================================== -->
+    <section class="section recommendations-section" id="recommendations" aria-labelledby="recommendations-heading">
+      <div class="container">
+        <div class="recommendations-header-row">
+          <h2 class="section-title" id="recommendations-heading">Recommendations</h2>
+          <div class="carousel-controls" aria-label="Recommendation carousel controls">
+            <button 
+              type="button" 
+              class="carousel-btn" 
+              id="rec-prev-btn" 
+              aria-label="Previous recommendation"
+              title="Previous recommendation"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="15 18 9 12 15 6"></polyline>
+              </svg>
+            </button>
+            <button 
+              type="button" 
+              class="carousel-btn" 
+              id="rec-next-btn" 
+              aria-label="Next recommendation"
+              title="Next recommendation"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <polyline points="9 18 15 12 9 6"></polyline>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal scrollable carousel containing ONLY comic book cover images -->
+        <div class="carousel-wrapper">
+          <div class="carousel-track" id="recommendations-track" tabindex="0" aria-label="Comic book recommendations carousel">
+            <!-- Rendered dynamically by recommendations.js -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==========================================================================
+       7. Shopping Cart Drawer & Overlay
+       ========================================================================== -->
+  <div class="cart-drawer-overlay" id="cart-drawer-overlay" aria-hidden="true"></div>
+  
+  <aside 
+    class="cart-drawer" 
+    id="cart-drawer" 
+    role="dialog" 
+    aria-modal="true" 
+    aria-labelledby="cart-drawer-title" 
+    aria-hidden="true"
+  >
+    <!-- Drawer Header -->
+    <div class="cart-drawer-header">
+      <div class="cart-header-title-wrap">
+        <h3 class="cart-header-title" id="cart-drawer-title">Your Cart</h3>
+        <span class="cart-header-count" id="cart-header-count">0 items</span>
+      </div>
+      <button 
+        type="button" 
+        class="cart-close-btn" 
+        id="cart-close-btn" 
+        aria-label="Close shopping cart"
+      >
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Drawer Body (Items or Empty State) -->
+    <div class="cart-drawer-body" id="cart-drawer-body">
+      <!-- Injected by cartDrawer.js -->
+    </div>
+
+    <!-- Drawer Footer (Subtotal and Checkout Demo) -->
+    <div class="cart-drawer-footer" id="cart-drawer-footer" style="display: none;">
+      <div class="cart-summary-row">
+        <span>Total Items:</span>
+        <strong id="cart-summary-total-count">0 items</strong>
+      </div>
+      <div class="cart-subtotal-row">
+        <span class="cart-subtotal-label">Subtotal:</span>
+        <span class="cart-subtotal-amount" id="cart-subtotal-amount">$0.00</span>
+      </div>
+      <button type="button" class="checkout-btn" id="cart-checkout-btn">
+        <span>Proceed to Checkout</span>
+        <span class="checkout-demo-tag">(Demo)</span>
+      </button>
+    </div>
+  </aside>
+
+  <!-- Demo Checkout Notice Modal -->
+  <div class="modal-overlay" id="demo-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+    <div class="modal-box">
+      <div class="modal-icon-wrap" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none">
+          <circle cx="12" cy="12" r="10" stroke="currentColor"/>
+          <line x1="12" y1="8" x2="12" y2="12" stroke="currentColor"/>
+          <line x1="12" y1="16" x2="12.01" y2="16" stroke="currentColor"/>
+        </svg>
+      </div>
+      <h3 class="modal-title" id="modal-title">Checkout Demonstration</h3>
+      <p class="modal-text">
+        This is a front-end demonstration project for Star Comics. Real payment processing, accounts, and order fulfillment are not enabled.
+      </p>
+      <button type="button" class="modal-close-btn" id="demo-modal-close-btn">
+        Got it, thanks!
+      </button>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container" id="toast-container" aria-live="polite"></div>
+
+  <!-- ==========================================================================
+       9. Footer
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-content">
+      <div class="footer-brand">
+        <span class="brand-star" aria-hidden="true">&#9733;</span>
+        <span>Star Comics</span>
+      </div>
+      <p class="footer-tagline">Your next favorite story starts here.</p>
+      <p class="footer-copyright">&copy; <span id="footer-current-year">2026</span> Star Comics. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/components/header.js"></script>
+  <script src="js/components/hero.js"></script>
+  <script src="js/components/bestSellers.js"></script>
+  <script src="js/components/recommendations.js"></script>
+  <script src="js/components/cartDrawer.js"></script>
+  <script src="js/components/footer.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

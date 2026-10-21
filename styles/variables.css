@@ -1,0 +1,78 @@
+/* ==========================================================================
+   Star Comics Design System — CSS Variables & Theme
+   ========================================================================== */
+
+:root {
+  /* Brand Color Palette */
+  --color-white: #FFFFFF;
+  --color-mustard: #D6A62E;
+  --color-mustard-hover: #C29323;
+  --color-mustard-light: #FBF4E4;
+  --color-pastel-pink: #F6DDE5;
+  --color-pastel-pink-hover: #EECBD7;
+  --color-soft-blue: #A9C7E8;
+  --color-soft-blue-hover: #93B6DD;
+  --color-soft-blue-light: #EDF3FA;
+  --color-charcoal: #292929;
+  --color-charcoal-muted: #666666;
+  --color-charcoal-light: #8E8E8E;
+
+  /* Neutral Surface & Border Colors */
+  --color-border-subtle: #ECECEC;
+  --color-border-medium: #E0E0E0;
+  --color-surface-bg: #FFFFFF;
+  --color-surface-alt: #FBFBFC;
+  --color-surface-card: #FFFFFF;
+
+  /* Typography */
+  --font-family-base: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Typography Scale */
+  --font-size-xs: 0.75rem;     /* 12px */
+  --font-size-sm: 0.875rem;    /* 14px */
+  --font-size-base: 1rem;      /* 16px */
+  --font-size-md: 1.125rem;    /* 18px */
+  --font-size-lg: 1.25rem;     /* 20px */
+  --font-size-xl: 1.5rem;      /* 24px */
+  --font-size-2xl: 1.875rem;   /* 30px */
+  --font-size-3xl: 2.25rem;    /* 36px */
+  --font-size-4xl: 3rem;       /* 48px */
+  --font-size-5xl: 3.75rem;    /* 60px */
+
+  /* Spacing */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --space-2xl: 3rem;
+  --space-3xl: 4.5rem;
+  --space-4xl: 6rem;
+
+  /* Layout */
+  --max-width-site: 1200px;
+  --header-height: 72px;
+  --drawer-width: 420px;
+
+  /* Borders & Radii */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-subtle: 0 2px 8px rgba(41, 41, 41, 0.04);
+  --shadow-card: 0 4px 16px rgba(41, 41, 41, 0.06);
+  --shadow-card-hover: 0 10px 28px rgba(41, 41, 41, 0.1);
+  --shadow-drawer: -4px 0 24px rgba(41, 41, 41, 0.15);
+  --shadow-dropdown: 0 8px 24px rgba(41, 41, 41, 0.12);
+
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
